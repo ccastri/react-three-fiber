@@ -1,5 +1,4 @@
-import React from 'react'
-import { chairColors, cushionColors, useCustomization } from '../contexts/Customization'
+import { chairColors, cushionColors, useCustomization } from '../contexts/Customization';
 
 const Configurator = () => {
     const {material, setMaterial, legs, setLegs, chairColor, setChairColor, cushionColor, setCushionColor} = useCustomization();

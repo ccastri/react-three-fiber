@@ -1,6 +1,6 @@
-import { useRef, useEffect } from 'react';
-import { useGLTF, useAnimations, Gltf } from '@react-three/drei';
-import { Vector3} from 'three'
+import { useAnimations, useGLTF } from '@react-three/drei';
+import { useEffect, useRef } from 'react';
+import { Vector3 } from 'three';
 
 type ModelProps = {
   [key: string]: any;
