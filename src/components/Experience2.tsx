@@ -1,8 +1,10 @@
 
 import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
+
 import { useLayoutEffect, useRef } from "react";
 import * as THREE from "three";
+import { Mesh, MeshStandardMaterial, Color, Group, Euler } from "three";
 import {
   ContactShadows,
   Environment,
@@ -15,10 +17,10 @@ const shiningWhite = new THREE.Color(1.1, 1.1, 1.1);
 const shiningRed = new THREE.Color(4.8, 0.1, 0.1);
 
 export const Experience2 = () => {
-  const podium = useRef<any>();
-  const car = useRef<any>();
-  const square = useRef<any>();
-  const triangle = useRef<any>();
+    const podium = useRef<Group | any>();
+  const car = useRef<Group | any>()
+  const square = useRef<Mesh| any>()
+  const triangle = useRef<Mesh | any>()
 
   const tl = useRef<any>(null);
 

@@ -2,15 +2,19 @@
 import { Canvas } from "@react-three/fiber";
 // import Tree from './components/Tree.jsx'
 // import Duende from "./components/Duende.js";
-import { Experience } from "./components/Experience.js";
-import { Experience2 } from "./components/Experience2.js";
+import { Experience } from "./components/Experience";
+import { Experience2 } from "./components/Experience2";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
+import { CustomizationProvider } from "./contexts/Customization";
+import Experience3 from "./components/Experience3";
+import Configurator from "./components/Configurator";
 function App() {
   // const [count, setCount] = useState(0)
 
   return (
-    <div className=' space-y-4 h-full w-10/12'>
-  <div className="border-2 bg-gradient-to-b from-blue-200 via-green-300 to-green-500 border-black h-screen space-y-8 p-4">
+    
+    <div className=' space-y-4 h-full w-full'>
+      <div className="border-2 bg-gradient-to-b from-blue-200 via-green-300 to-green-500 border-black h-screen space-y-8 p-4">
       {/* <p className="text-bold text-blue-500 text-xl">klk</p> */}
 
 
@@ -29,10 +33,23 @@ function App() {
           luminanceThreshold={1}
           intensity={1.42}
           radius={0.32}
-        />
+          />
       </EffectComposer>
     </Canvas>
     </div>
+    <CustomizationProvider>
+    <div className="h-screen flex relative">
+       <Canvas dpr={[1, 2]}>
+          <Experience3 />
+          <color attach="background" args={["#213547"]} />
+          <fog attach="fog" args={["#213547", 10, 20]} />
+        </Canvas>
+        <div className='flex flex-end right-0 bottom-0 w-4/12 absolute'>
+
+        <Configurator/>
+        </div>
+    </div>
+    </CustomizationProvider>
     </div>
   )
 }

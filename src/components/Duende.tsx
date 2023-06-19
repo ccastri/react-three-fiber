@@ -10,7 +10,7 @@ export default function Duende(props: ModelProps) {
   const group = useRef<any>();
   const { nodes, materials, animations }: any = useGLTF('/duende.gltf');
   const { actions, mixer } = useAnimations(animations, group);
-  console.log(actions)
+  // console.log(actions)
 
   useEffect(() => {
   
