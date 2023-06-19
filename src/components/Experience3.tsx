@@ -14,6 +14,7 @@ import Chair from "./Chair";
 // import Shoe from "./Shoe";
 
 const Experience3: React.FC = () => {
+  
     
   return (
     <>

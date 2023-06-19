@@ -12,7 +12,7 @@ interface CustomizationContextType {
   cushionColor: { color: string; name: string };
   setCushionColor: (color: { color: string; name: string }) => void;
 }
-const chairColors = [
+export const chairColors = [
   {
     color: "#683434",
     name: "brown",
@@ -47,7 +47,7 @@ const chairColors = [
   },
 ];
 
-const cushionColors = [
+export const cushionColors = [
   {
     color: "#683434",
     name: "brown",

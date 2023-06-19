@@ -14,11 +14,11 @@ function App() {
   return (
     
     <div className=' space-y-4 h-full w-full'>
-      {/* <div className="border-2 bg-gradient-to-b from-blue-200 via-green-300 to-green-500 border-black h-screen space-y-8 p-4"> */}
+      <div className="border-2 bg-gradient-to-b from-blue-200 via-green-300 to-green-500 border-black h-screen space-y-8 p-4">
       {/* <p className="text-bold text-blue-500 text-xl">klk</p> */}
 
 
-      {/* <Canvas
+      <Canvas
        shadows camera={{ position: [-5, 1, 6], fov: 25 }}>
       <Experience/>
       </Canvas>
@@ -36,15 +36,17 @@ function App() {
           />
       </EffectComposer>
     </Canvas>
-    </div> */}
+    </div>
     <CustomizationProvider>
-    <div className="h-screen flex relative">
+    <div className=" h-screen flex relative">
+      {/* dpr controls the resolution on diferent devices: 
+          1px for larger screens and 2px por retine kind of screens */}
        <Canvas dpr={[1, 2]}>
           <Experience3 />
           <color attach="background" args={["#213547"]} />
           <fog attach="fog" args={["#213547", 10, 20]} />
         </Canvas>
-        <div className='flex flex-end right-0 bottom-0 w-4/12 absolute'>
+        <div className='flex flex-end right-0 bottom-0 max-h-screen overflow-x-hidden   overflow-y-auto w-4/12 absolute'>
 
         <Configurator/>
         </div>
