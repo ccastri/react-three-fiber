@@ -1,5 +1,17 @@
 import { createContext, useContext, useState } from "react";
 
+interface CustomizationContextType {
+  material: string;
+  setMaterial: (material: string) => void;
+  legs: number;
+  setLegs: (legs: number) => void;
+  chairColors: { color: string; name: string }[];
+  chairColor: { color: string; name: string };
+  setChairColor: (color: { color: string; name: string }) => void;
+  cushionColors: { color: string; name: string }[];
+  cushionColor: { color: string; name: string };
+  setCushionColor: (color: { color: string; name: string }) => void;
+}
 const chairColors = [
   {
     color: "#683434",
@@ -70,35 +82,40 @@ const cushionColors = [
   },
 ];
 
-const CustomizationContext = createContext({});
+const CustomizationContext = createContext<CustomizationContextType | null>(null);
 
-export const CustomizationProvider = (props: any) => {
+export const CustomizationProvider:React.FC<{ children: React.ReactNode }> = ({children}) => {
   const [material, setMaterial] = useState("leather");
   const [legs, setLegs] = useState(1);
   const [chairColor, setChairColor] = useState(chairColors[0]);
   const [cushionColor, setCushionColor] = useState(cushionColors[0]);
 
+    const contextValue: CustomizationContextType = {
+    material,
+    setMaterial,
+    legs,
+    setLegs,
+    chairColors,
+    chairColor,
+    setChairColor,
+    cushionColors,
+    cushionColor,
+    setCushionColor,
+  };
+
   return (
     <CustomizationContext.Provider
-      value={{
-        material,
-        setMaterial,
-        legs,
-        setLegs,
-        chairColors,
-        chairColor,
-        setChairColor,
-        cushionColors,
-        cushionColor,
-        setCushionColor,
-      }}
+      value={contextValue}
     >
-      {props.children}
+      {children}
     </CustomizationContext.Provider>
   );
 };
 
-export const useCustomization = () => {
+export const useCustomization = (): CustomizationContextType => {
   const context = useContext(CustomizationContext);
+  if (!context) {
+    throw new Error("useCustomization must be used within a CustomizationProvider");
+  }
   return context;
 };

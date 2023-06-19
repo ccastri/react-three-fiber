@@ -8,7 +8,7 @@ import { useCustomization } from "../contexts/Customization";
 
 function Chair(props: any) {
   const { nodes, materials }: any = useGLTF("./chair.gltf");
-  // const { material, legs, chairColor, cushionColor } = useCustomization();
+  const { material, legs, chairColor, cushionColor } = useCustomization();
 
   // Obtects to be destructured within {...props}
   const leatherTextureProps = useTexture({
@@ -61,11 +61,11 @@ function Chair(props: any) {
           envMapIntensity={1}
           roughness={0.98}
           // color="green"
-          // {...(material === "leather"
-          //   ? leatherTextureProps
-          //   : fabricTextureProps)}
-          // color={chairColor.color}
-          color="white"
+          {...(material === "leather"
+            ? leatherTextureProps
+            : fabricTextureProps)}
+          color={chairColor.color}
+          
         />
       </mesh>
       <mesh
@@ -75,8 +75,8 @@ function Chair(props: any) {
       >
         <meshStandardMaterial
           {...fabricTextureProps}
-          // color={cushionColor.color}
-          color='blue'
+          color={cushionColor.color}
+          // color='blue'
         />
       </mesh>
       <mesh

@@ -14,11 +14,11 @@ function App() {
   return (
     
     <div className=' space-y-4 h-full w-full'>
-      <div className="border-2 bg-gradient-to-b from-blue-200 via-green-300 to-green-500 border-black h-screen space-y-8 p-4">
+      {/* <div className="border-2 bg-gradient-to-b from-blue-200 via-green-300 to-green-500 border-black h-screen space-y-8 p-4"> */}
       {/* <p className="text-bold text-blue-500 text-xl">klk</p> */}
 
 
-      <Canvas
+      {/* <Canvas
        shadows camera={{ position: [-5, 1, 6], fov: 25 }}>
       <Experience/>
       </Canvas>
@@ -36,7 +36,7 @@ function App() {
           />
       </EffectComposer>
     </Canvas>
-    </div>
+    </div> */}
     <CustomizationProvider>
     <div className="h-screen flex relative">
        <Canvas dpr={[1, 2]}>
