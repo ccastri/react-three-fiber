@@ -1,9 +1,8 @@
 import { Environment, MeshReflectorMaterial, OrbitControls } from "@react-three/drei";
 import { useFrame } from '@react-three/fiber';
 import { useRef } from "react";
-import TreeSpruce from "./Tree";
-import { Group, Mesh, MeshStandardMaterial } from "three";
 import Duende from "./Duende";
+import TreeSpruce from "./Tree";
 import WolfKorrigan from "./Wolf-Korrigan";
 
 interface IMovingItemProps {

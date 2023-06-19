@@ -2,15 +2,15 @@
 import { useFrame } from "@react-three/fiber";
 import gsap from "gsap";
 
-import { useLayoutEffect, useRef } from "react";
-import * as THREE from "three";
-import { Mesh, MeshStandardMaterial, Color, Group, Euler } from "three";
 import {
   ContactShadows,
   Environment,
   Lightformer,
   OrbitControls,
 } from "@react-three/drei";
+import { useLayoutEffect, useRef } from "react";
+import * as THREE from "three";
+import { Group, Mesh } from "three";
 import Cybertruck from "./Cybertruck";
 
 const shiningWhite = new THREE.Color(1.1, 1.1, 1.1);

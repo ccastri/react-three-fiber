@@ -1,14 +1,8 @@
 import {
-  Backdrop,
-  BakeShadows,
-  Float,
   MeshReflectorMaterial,
-  OrbitControls,
   PresentationControls,
-  Stage,
-  useGLTF,
+  Stage
 } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
 import Chair from "./Chair";
 // import Chair from "./Chair";
 // import Shoe from "./Shoe";
