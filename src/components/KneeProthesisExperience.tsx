@@ -7,7 +7,7 @@ import Chair from "./Chair";
 // import Chair from "./Chair";
 // import Shoe from "./Shoe";
 
-const Experience3: React.FC = () => {
+const KneeProthesisExperience: React.FC = () => {
   
     
   return (
@@ -22,7 +22,7 @@ const Experience3: React.FC = () => {
         <ambientLight intensity={0.2} />
         <Stage environment="city" intensity={0.6} castShadow={false}>
           <Chair />
-          {/* <MeshBasicMaterial/> */}
+          {/* <KneeProsthesis/> */}
         </Stage>
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -2, 0]}>
           <planeGeometry args={[170, 170]} />
@@ -50,4 +50,4 @@ const Experience3: React.FC = () => {
   );
 };
 
-export default Experience3;
+export default KneeProthesisExperience;
